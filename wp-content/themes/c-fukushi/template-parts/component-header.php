@@ -7,7 +7,11 @@ if (has_post_thumbnail()) {
   $thumbnail_img_url = $thumbnail_img[0];
   $is_img_url = "true";
 }
+if (!isset($thumbnail_img_url)) {
+    $thumbnail_img_url = ''; 
+}
 ?>
+
 <section>
   <div class="component-header" data-isurl="<?php echo $is_img_url; ?>" style="background-image: url('<?php echo  $thumbnail_img_url; ?>')">
     <div class="component-header-block">
