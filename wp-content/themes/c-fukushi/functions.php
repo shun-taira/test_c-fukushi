@@ -456,7 +456,7 @@ add_image_size('top-slider_sp', 563, 849, true);
 <?php
 //Schema_共通部分
 add_action('wp_head', function() {
-  if (is_page(array('first', 'plan', 'chokuso'))) {
+  if (is_page(array('first', 'plan', 'chokuso','ichinichi', '', 'ichinichi-hana','futsuka'))) {
     ?>
     <script type="application/ld+json">
     <?php
@@ -859,7 +859,6 @@ $json = <<<JSON
   "@context": "https://schema.org",
   "@graph": [
     {
-      // 葬儀の流れをHowToとしてマークアップ
       "@type": "HowTo",
       "@id": "https://staging.c-fukushi.co.jp/first/#howto",
       "name": "ご逝去からご葬儀までの手順",
@@ -2101,4 +2100,222 @@ JSON;
     }
 }
 add_action('wp_head', 'custom_schema_futsuka_detail');
+?>
+<?php
+/**
+ * スラッグ 'hall' ページのJSON-LDスキーマ（斎場一覧）を追加
+ * ItemListのdescriptionを削除
+ * 会員価格のスキーマを削除
+ * 舟渡斎場をリストに追加
+ */
+function custom_schema_hall_list() {
+    // スラッグ'hall'のページでのみ実行
+    if ( is_page('hall') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ItemList",
+                "@id": "https://staging.c-fukushi.co.jp/hall/#halllist",
+                "name": "ご利用可能な斎場・葬儀場",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "中央福祉会館",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "西新井宿603-3",
+                                "addressLocality": "川口市",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "333-0833"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/hall/chuou-fukushi/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "小さな蕨会館",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "北町3丁目4-25",
+                                "addressLocality": "蕨市",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "335-0001"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/hall/warabi/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "川口市めぐりの森",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "大字新井宿430-1",
+                                "addressLocality": "川口市",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "333-0826"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/relation/川口市めぐりの森/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "戸田葬祭場",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "舟渡4丁目15-1",
+                                "addressLocality": "板橋区",
+                                "addressRegion": "東京都",
+                                "postalCode": "174-0041"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/relation/戸田葬祭場-光の間（3階）/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "谷塚斎場",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "瀬崎4-6-36",
+                                "addressLocality": "草加市",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "340-0022"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/relation/谷塚斎場%e3%80%80北館/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "大宮聖苑",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "染谷2丁目350番地1",
+                                "addressLocality": "さいたま市見沼区",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "337-0026"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/relation/大宮聖苑/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "浦和斎場",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "大字下大久保1523番地1",
+                                "addressLocality": "さいたま市桜区",
+                                "addressRegion": "埼玉県",
+                                "postalCode": "338-0825"
+                            },
+                            "url": "https://staging.c-fukushi.co.jp/relation/浦和斎場/"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "舟渡斎場",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "舟渡4丁目14-6",
+                                "addressLocality": "板橋区",
+                                "addressRegion": "東京都",
+                                "postalCode": "174-0041"
+                            },
+                            "url": "http://testcfukushi.local/relation/舟渡斎場/"
+                        }
+                    }
+                ]
+            },
+			{
+      "@type": "ItemList",
+      "@id": "https://staging.c-fukushi.co.jp/plan/#planlist",
+      "name": "葬儀プラン一覧",
+      "description": "中央福祉葬祭が提供する、火葬式、一日葬、家族葬、二日葬の各プランとその価格を一覧表示しています。",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "直送おまかせプラン",
+          "offers": {
+            "@type": "Offer",
+            "price": "79000",
+            "priceCurrency": "JPY",
+            "url": "https://staging.c-fukushi.co.jp/plan/chokuso/"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "火葬式プラン",
+          "offers": {
+            "@type": "Offer",
+            "price": "154000",
+            "priceCurrency": "JPY",
+            "url": "https://staging.c-fukushi.co.jp/plan/kasou/"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "シンプル一日プラン",
+          "offers": {
+            "@type": "Offer",
+            "price": "198000",
+            "priceCurrency": "JPY",
+            "url": "https://staging.c-fukushi.co.jp/plan/ichinichi/"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "家族葬一日プラン",
+          "offers": {
+            "@type": "Offer",
+            "price": "298000",
+            "priceCurrency": "JPY",
+            "url": "https://staging.c-fukushi.co.jp/plan/ichinichi-hana/"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "家族葬二日プラン",
+          "offers": {
+            "@type": "Offer",
+            "price": "598000",
+            "priceCurrency": "JPY",
+            "url": "https://staging.c-fukushi.co.jp/plan/futsuka/"
+          }
+        }
+      ]
+    }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_hall_list');
 ?>
