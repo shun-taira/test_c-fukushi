@@ -456,7 +456,7 @@ add_image_size('top-slider_sp', 563, 849, true);
 <?php
 //Schema_共通部分
 add_action('wp_head', function() {
-  if (is_page(array('first', 'plan', 'chokuso','ichinichi', '', 'ichinichi-hana','futsuka'))) {
+  if (is_page(array('first', 'plan', 'chokuso','ichinichi', '', 'ichinichi-hana','futsuka','warabi'))) {
     ?>
     <script type="application/ld+json">
     <?php
@@ -2102,14 +2102,8 @@ JSON;
 add_action('wp_head', 'custom_schema_futsuka_detail');
 ?>
 <?php
-/**
- * スラッグ 'hall' ページのJSON-LDスキーマ（斎場一覧）を追加
- * ItemListのdescriptionを削除
- * 会員価格のスキーマを削除
- * 舟渡斎場をリストに追加
- */
+// schema_hall
 function custom_schema_hall_list() {
-    // スラッグ'hall'のページでのみ実行
     if ( is_page('hall') ) {
         $schema_json = <<<JSON
 [
@@ -2318,4 +2312,73 @@ JSON;
     }
 }
 add_action('wp_head', 'custom_schema_hall_list');
+?>
+<?php
+// schema_warabi
+function custom_schema_warabi_detail() {
+    if ( is_page('warabi') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "http://testcfukushi.local/hall/warabi/#localbusiness",
+                "name": "小さな蕨会館",
+                "description": "小さな蕨会館は、蕨市北町にある24時365日対応 安置室完備の葬儀式場です。家族葬・直葬・一日葬に対応可能な館内はバリアフリー設計となっていますので、ご年配の方や車いすをご利用の方も安心してお過ごしいただけます。",
+                "url": "http://testcfukushi.local/hall/warabi/",
+                "image": "http://testcfukushi.local/wp-content/uploads/2025/07/0-scaled.jpg",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "北町3丁目4-25",
+                    "addressLocality": "蕨市",
+                    "addressRegion": "埼玉県",
+                    "postalCode": "335-0001",
+                    "addressCountry": "JP"
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday"
+                        ],
+                        "opens": "00:00",
+                        "closes": "23:59"
+                    }
+                ],
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "バリアフリー設計",
+                        "value": true
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "安置室完備",
+                        "value": true
+                    }
+                ],
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "telephone": "0120-594-294"
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_warabi_detail');
 ?>
