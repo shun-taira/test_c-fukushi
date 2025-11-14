@@ -1,0 +1,64 @@
+$cf_blue: #2F5A7C;
+$cf_navy: #33466B;
+$cf_red: #9B0E0E;
+$cf_gray: #666666;
+$cf_light_gray: #F2F4F4;
+$cf_black: #333333;
+$cf_gold: #A08332;
+
+
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+// ブレイクポイントを指定
+$pc: 1080px;
+$tab: 768px;
+$sp: 480px;
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+main {
+  margin-top: 100px;
+  @include pc {
+    margin-top: 44px;
+  }
+  #privacy {
+    padding: 70px 0 100px;
+    background: $cf_light_gray;
+    .intro_date {
+      text-align: right;
+    }
+    .base_width>ol {
+      >li {
+        padding-top: 2rem;;
+        h5 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+}
+

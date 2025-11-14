@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+header {
+  height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 44px;
+  }
+}
+
+header .header_inner {
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0 !important;
+}
+
+header .header_inner img {
+  width: 220px;
+}
+
+@media screen and (max-width: 768px) {
+  header .header_inner img {
+    width: 160px;
+  }
+}
+
+main {
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #form_sct {
+  padding: 70px 0 70px;
+}
+
+main #form_sct .form {
+  background: #F2F4F4;
+  width: 100%;
+  margin: 70px 0;
+  padding: 80px 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #form_sct .form {
+    padding: 70px 1rem;
+  }
+}
+
+main #form_sct .form .second_width {
+  width: 80vw;
+}
+
+main #form_sct .form .form_step_bar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 1fr 20px 1fr 20px;
+      grid-template-columns: 20px 1fr 20px 1fr 20px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  max-width: 500px;
+  margin: 0 auto 130px;
+}
+
+main #form_sct .form .form_step_bar .step {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2F5A7C;
+  position: relative;
+}
+
+main #form_sct .form .form_step_bar .step.step_yet {
+  background: #aeaeae;
+}
+
+main #form_sct .form .form_step_bar .step::after {
+  display: block;
+  width: 50px;
+  color: #2F5A7C;
+  font-weight: bold;
+  position: absolute;
+  bottom: -2rem;
+  left: -1rem;
+}
+
+main #form_sct .form .form_step_bar .step.step_01::after {
+  content: 'ご入力';
+}
+
+main #form_sct .form .form_step_bar .step.step_02::after {
+  content: 'ご確認';
+}
+
+main #form_sct .form .form_step_bar .step.step_03::after {
+  content: '完了';
+  left: -0.5rem;
+}
+
+main #form_sct .form .form_step_bar .step.step_yet::after {
+  color: #aeaeae;
+}
+
+main #form_sct .form .form_step_bar .step_bar {
+  width: 100%;
+  height: 3px;
+  background: #2F5A7C;
+}
+
+main #form_sct .form .form_step_bar .step_bar.step_yet {
+  background: #aeaeae;
+}
+
+main #form_sct .form .form_itm {
+  margin-bottom: 50px;
+}
+
+main #form_sct .form .form_itm h2 {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+main #form_sct .form .form_itm h2.required::after {
+  content: '必須';
+  color: #ffffff;
+  background: #9B0E0E;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+main #form_sct .form .form_itm input,
+main #form_sct .form .form_itm textarea,
+main #form_sct .form .form_itm select {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #666666;
+  font-size: 1rem;
+  font-family: "游ゴシック", sans-serif;
+}
+
+main #form_sct .form .form_itm input,
+main #form_sct .form .form_itm textarea {
+  width: 100%;
+}
+
+main #form_sct .form .form_itm select {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+main #form_sct .form .form_itm select:first-of-type {
+  margin-left: 0;
+}
+
+main #form_sct .form .form_itm input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+main #form_sct .form .form_itm label {
+  cursor: pointer;
+}
+
+main #form_sct .form .form_itm textarea {
+  height: 160px;
+}
+
+main #form_sct .form .form_itm .formPair {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  main #form_sct .form .form_itm .formPair {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main #form_sct .form .form_itm.address_section input {
+  margin-bottom: 10px;
+}
+
+main #form_sct .form p {
+  margin-top: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+main #form_sct .form p a {
+  padding-right: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+main #form_sct .form p a::after {
+  content: url("../img/link.svg");
+  display: block;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+main #form_sct .form p a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  main #form_sct .form .thanks_msg {
+    text-align: left;
+  }
+}
+
+main #form_sct .form .form_next,
+main #form_sct .form .form_back {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 10px auto 0;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+main #form_sct .form .form_next:hover,
+main #form_sct .form .form_back:hover {
+  opacity: 0.9;
+}
+
+main #form_sct .form .form_next {
+  background: #33466B;
+}
+
+main #form_sct .form .form_back {
+  background: #666666;
+  margin-top: 50px;
+}
+
+main #form_sct .form .form_top {
+  margin-top: 80px;
+}
+
+footer {
+  background: #666666;
+  padding: 40px 0;
+  margin: 0 !important;
+}
+
+footer a {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+footer a img {
+  width: 100%;
+}
+/*# sourceMappingURL=form.css.map */

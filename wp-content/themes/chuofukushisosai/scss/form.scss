@@ -1,0 +1,261 @@
+$cf_blue: #2F5A7C;
+$cf_navy: #33466B;
+$cf_red: #9B0E0E;
+$cf_gray: #666666;
+$cf_light_gray: #F2F4F4;
+$cf_black: #333333;
+$cf_gold: #A08332;
+
+
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+// ブレイクポイントを指定
+$pc: 1080px;
+$tab: 768px;
+$sp: 480px;
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+header {
+  height: 60px;
+  @include tab {
+    height: 44px;
+  }
+  .header_inner {
+    height: 100%;
+    align-items: center;
+    padding-top: 0 !important;
+    img {
+      width: 220px;
+      @include tab {
+        width: 160px;
+      }
+    }
+  }
+}
+main {
+  margin-top: 60px;
+  @include tab {
+    margin-top: 44px;
+  }
+  #form_sct {
+    padding: 70px 0 70px;
+    .form {
+      background: $cf_light_gray;
+      width: 100%;
+      margin: 70px 0;
+      padding: 80px 1rem;
+      @include tab {
+        padding: 70px 1rem;
+      }
+      .second_width {
+        width: 80vw;
+      }
+      .form_step_bar {
+        display: grid;
+        grid-template-columns: 20px 1fr 20px 1fr 20px;
+        align-items: center;
+        width: 85%;
+        max-width: 500px;
+        margin: 0 auto 130px;
+        .step {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: $cf_blue;
+          position: relative;
+
+          &.step_yet {
+            background: #aeaeae;
+          }
+          &::after {
+            display: block;
+            width: 50px;
+            color: $cf_blue;
+            font-weight: bold;
+            position: absolute;
+            bottom: -2rem;
+            left: -1rem;
+          }
+          &.step_01::after {
+            content: 'ご入力';
+          }
+          &.step_02::after {
+            content: 'ご確認';
+          }
+          &.step_03::after {
+            content: '完了';
+            left: -0.5rem;
+          }
+          &.step_yet::after {
+            color: #aeaeae;
+          }
+        }
+        .step_bar {
+          width: 100%;
+          height: 3px;
+          background: $cf_blue;
+          &.step_yet {
+            background: #aeaeae;
+
+          }
+        }
+      }
+      .form_itm {
+        margin-bottom: 50px;
+        h2 {
+          font-size: 1rem;
+          margin-bottom: 3px;
+          &.required {
+            &::after {
+              content: '必須';
+              color: #ffffff;
+              background: $cf_red;
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 0.8rem;
+              margin-left: 0.5rem;
+            }
+          }
+        }
+        input,
+        textarea,
+        select {
+          padding: 10px;
+          border-radius: 3px;
+          border: 1px solid $cf_gray;
+          font-size: 1rem;
+          font-family: "游ゴシック", sans-serif;
+        }
+        input,
+        textarea {
+          width: 100%;
+        }
+        select {
+          margin-left: 10px;
+          margin-right: 5px;
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+        input[type="radio"] {
+          width: 16px;
+          height: 16px;
+          margin-right: 20px;
+          margin-top: 10px;
+        }
+        label {
+          cursor: pointer;
+        }
+        textarea {
+          height: 160px;
+        }
+        .formPair {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          @include sp {
+            grid-template-columns: 1fr;
+          }
+        }
+        &.address_section {
+          input {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      p {
+        margin-top: 100px;
+        text-align: center;
+        font-weight: bold;
+        a {
+          padding-right: 1.5rem;
+          margin-right: 0.5rem;
+          position: relative;
+          &::after {
+            content: url("../img/link.svg");
+            display: block;
+            width: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .thanks_msg {
+        @include tab {
+          text-align: left;
+        }
+      }
+      .form_next,
+      .form_back {
+        display: block;
+        width: 300px;
+        max-width: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 10px auto 0;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 1.4rem;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      .form_next {
+        background: $cf_navy;
+      }
+      .form_back {
+        background: $cf_gray;
+        margin-top: 50px;
+      }
+      .form_top {
+        margin-top: 80px;
+      }
+
+    }
+    
+
+  }
+}
+footer {
+  background: $cf_gray;
+  padding: 40px 0;
+  margin: 0 !important;
+  a {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+}

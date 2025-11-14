@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #privacy {
+  padding: 70px 0 100px;
+  background: #F2F4F4;
+}
+
+main #privacy .intro_date {
+  text-align: right;
+}
+
+main #privacy .base_width > ol > li {
+  padding-top: 2rem;
+}
+
+main #privacy .base_width > ol > li h5 {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=privacy.css.map */

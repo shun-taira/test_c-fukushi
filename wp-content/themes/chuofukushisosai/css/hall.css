@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #chuofukushikaikan {
+  padding: 70px 0 150px;
+}
+
+main #chuofukushikaikan h2 {
+  padding-bottom: 50px;
+}
+
+main #chuofukushikaikan img {
+  width: 100%;
+}
+
+main #chuofukushikaikan .images {
+  margin-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+  main #chuofukushikaikan .images {
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main #chuofukushikaikan .images {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+main #chuofukushikaikan .images img {
+  width: 100%;
+}
+
+main #chuofukushikaikan table {
+  margin: 100px 0 0;
+  width: 100%;
+}
+
+main #chuofukushikaikan table tr:last-of-type td {
+  border-bottom: 1px solid #828383;
+}
+
+main #chuofukushikaikan table tr th {
+  width: 100px;
+  padding: 16px;
+  background: #828383;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  main #chuofukushikaikan table tr th {
+    padding: 8px;
+  }
+}
+
+main #chuofukushikaikan table tr td {
+  padding: 2rem;
+  background: #ffffff;
+  border-top: 1px solid #828383;
+}
+
+@media screen and (max-width: 480px) {
+  main #chuofukushikaikan table tr td {
+    padding: 8px;
+  }
+}
+
+main #chuofukushikaikan table tr td iframe {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+}
+
+main #halls {
+  background: #F2F4F4;
+  padding: 100px 0 100px;
+}
+
+main #halls .halls_list {
+  padding: 60px 0 0;
+}
+
+main #halls .halls_list h3 {
+  padding: 8px;
+  background: #2F5A7C;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  main #halls .halls_list h3 {
+    padding: 4px;
+  }
+}
+
+main #halls .halls_list ul {
+  background: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 480px) {
+  main #halls .halls_list ul {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main #halls .halls_list ul li {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #cccccc;
+}
+
+main #halls .halls_list ul li:nth-of-type(odd) {
+  border-right: 1px solid #cccccc;
+}
+
+@media screen and (max-width: 480px) {
+  main #halls .halls_list ul li:nth-of-type(odd) {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #halls .halls_list ul li {
+    padding: 0.5rem 1rem;
+  }
+}
+
+main #halls p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #halls p {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=hall.css.map */

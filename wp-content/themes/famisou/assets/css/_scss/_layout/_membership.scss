@@ -1,0 +1,72 @@
+.membership-prepare {
+  .prepare-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(60, 20);
+    @include paddingBottom(80, 30);
+    .prepare-head {
+      .prepare__h {
+        @extend .heading_dotted;
+        text-align: center;
+        color: var(--color_dark-blue);
+      }
+    }
+    .prepare-body {
+      @include marginTop(60, 30);
+      .prepare__h-sub {
+        @extend .heading_bar_small;
+      }
+      .prepare__p {
+        @include fsVw(16, 14);
+        font-weight: 500;
+        line-height: 1.7;
+        margin-top: 1.5em;
+      }
+      .prepare-table-wrap {
+        @media (max-width: $md) {
+          overflow: auto;
+          margin-right: -20px;
+          margin-left: -20px;
+          table {
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 700px;
+          }
+        }
+        @include marginTop(40, 30);
+        @extend .page-tag;
+        th {
+          width: 20%;
+        }
+        td {
+          width: 40%;
+          .prepare__img {
+            max-width: 100%;
+            height: auto;
+          }
+          a {
+            color: var(--color_red);
+            font-weight: 700;
+          }
+        }
+        thead {
+          td {
+            background-color: var(--color_dark-blue);
+            font-weight: 700;
+            color: var(--color_white);
+            font-weight: 700;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.membership-line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(54, 30);
+  }
+}

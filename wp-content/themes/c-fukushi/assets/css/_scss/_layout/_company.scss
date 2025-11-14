@@ -1,0 +1,83 @@
+.company {
+  .company-block {
+    @include marginTop(60, 10);
+    .company-head {
+      .company__h {
+        @extend .heading_dotted;
+        text-align: center;
+        color: var(--color_dark-blue);
+      }
+    }
+    .company-body {
+      @include marginTop(48, 15);
+      background-image: url('../images/comany-body-back.png');
+      background-size: cover;
+      @include paddingTop(78, 15);
+      @include paddingBottom(78, 15);
+      .company-wrap {
+        @include wrapWidth(var(--width_header));
+        .company__h-sub {
+          color: var(--color_dark-blue);
+          text-align: center;
+          @include fsVw(28, 20);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.7;
+        }
+        .company__p {
+          text-align: center;
+          @include fsVw(18, 14);
+          font-weight: 500;
+          line-height: 1.7;
+          margin-top: 1.7em;
+          @media (max-width: $md) {
+            text-align: justify;
+            margin-top: 1em;
+          }
+        }
+        .company-ceo {
+          text-align: center;
+          @include fsVw(20, 16);
+          font-weight: 700;
+          line-height: 1.7;
+          margin-top: 1.5em;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.company-overview {
+  .overview-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 20);
+    @include paddingBottom(72, 30);
+    .overview__h {
+      @extend .heading_bar_small;
+    }
+    .overview-body {
+      @include marginTop(24, 20);
+      @extend .page-tag;
+    }
+    .overview-map {
+      @include marginTop(40, 20);
+      iframe {
+        width: 100%;
+        height: 460px;
+        border: none;
+        @media (max-width: $md) {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+.company-line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 10);
+    @include paddingBottom(54, 30);
+  }
+}

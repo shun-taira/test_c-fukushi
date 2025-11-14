@@ -1,0 +1,20 @@
+<svg width="124" height="121" viewBox="0 0 124 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="41.5" y="5" width="40" height="48" rx="1" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M38.5 24C46.1667 21.3333 61.5 12.8 61.5 0" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M84.5 24C76.8333 21.3333 61.5 12.8 61.5 0" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M48.5 53C48.5 43.4 53.5 40 56 39.5C53.8333 39.8333 49.5 38.6 49.5 31C49.5 21.5 57.5 20 60.5 20H61.5" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M73.5 53C73.5 43.4 68.5 40 66 39.5C68.1667 39.8333 72.5 38.6 72.5 31C72.5 21.5 64.5 20 61.5 20H60.5" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M36.5 6H15.5C14.3333 13.3333 10.3 28 3.5 28H36.5" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M86.5 6H107.5C108.667 13.3333 112.7 28 119.5 28H86.5" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M23.5 28V54" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M99.5 28V54" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M56.5 56H55.5C52.8333 56.1667 47.5 58.2 47.5 65C47.5 65 45.5 57 39.5 57C36.8333 56.8333 31.5 58.8 31.5 68C31.3333 65.3333 29.5 60 23.5 60C17.5 60 15.6667 67.3333 15.5 71C10.8333 70.1667 1.5 70.4 1.5 78C1.5 87.5 7.5 88 8.5 88C9.5 88 12.5 88 12.5 82C12.4983 82.2464 11 93 20.5 93C22.5 93 27.5 92.5 27.5 84C27.5 84 26 94 35.5 94C38 94 42.5 93.5 42.5 84C42.5 84 41.5 94 50.5 94C52.5 94 56.5 92.2 56.5 85" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<path d="M56.5 56H57.7C60.9 56.1667 67.3 58.2 67.3 65C67.3 65 69.7 57 76.9 57C80.1 56.8333 86.5 58.8 86.5 68C86.7 65.3333 88.9 60 96.1 60C103.3 60 105.5 67.3333 105.7 71C111.3 70.1667 122.5 70.4 122.5 78C122.5 87.5 115.3 88 114.1 88C112.9 88 109.3 88 109.3 82C109.302 82.2464 111.1 93 99.7 93C97.3 93 91.3 92.5 91.3 84C91.3 84 93.1 94 81.7 94C78.7 94 73.3 93.5 73.3 84C73.3 84 74.5 94 63.7 94C61.3 94 56.5 92.2 56.5 85" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="3.5" y1="120" x2="119.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="9.5" y1="90" x2="9.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="113.5" y1="90" x2="113.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="16.5" y1="96" x2="16.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="105.5" y1="96" x2="105.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="46.5" y1="98" x2="46.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+<line x1="76.5" y1="98" x2="76.5" y2="120" stroke="#4B3B94" stroke-width="2" stroke-linejoin="round"/>
+</svg>

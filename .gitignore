@@ -1,0 +1,11 @@
+# WordPress 設定ファイル
+wp-config.php
+
+# アップロードされたメディアファイル
+wp-content/uploads/
+
+# キャッシュや一時ファイル (プラグインによって異なる)
+wp-content/cache/
+
+# Local固有のファイル (必要に応じて)
+.DS_Store

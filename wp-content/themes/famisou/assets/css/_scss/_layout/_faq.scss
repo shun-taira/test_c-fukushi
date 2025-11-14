@@ -1,0 +1,22 @@
+.faq-faq {
+  background-color: var(--color_small-gray);
+  .faq-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(66, 30);
+    .faq-content-item {
+      display: block;
+      @include marginTop(60, 30);
+    }
+  }
+}
+
+.faq-line {
+  @include marginTop(60, 30);
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(54, 30);
+  }
+}

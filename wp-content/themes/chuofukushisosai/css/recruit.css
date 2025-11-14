@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #requirements {
+  padding: 70px 0 150px;
+  background: #F2F4F4;
+}
+
+main #requirements h2 {
+  padding-bottom: 50px;
+}
+
+main #requirements table {
+  margin: 0 0 0;
+  width: 100%;
+}
+
+main #requirements table tr:last-of-type td {
+  border-bottom: 1px solid #828383;
+}
+
+main #requirements table tr th {
+  width: 110px;
+  padding: 1rem 0;
+  background: #828383;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  main #requirements table tr th {
+    padding: 8px;
+  }
+}
+
+main #requirements table tr td {
+  padding: 1rem;
+  background: #ffffff;
+  border-top: 1px solid #828383;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 480px) {
+  main #requirements table tr td {
+    padding: 8px;
+  }
+}
+/*# sourceMappingURL=recruit.css.map */

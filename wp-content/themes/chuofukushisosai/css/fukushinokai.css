@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #fukushinokai {
+  padding: 70px 0 100px;
+  background: #F2F4F4;
+}
+
+main #fukushinokai table {
+  margin: 100px auto 50px;
+  width: 100%;
+  max-width: 500px;
+}
+
+main #fukushinokai table tr th {
+  padding: 16px;
+  background: #2F5A7C;
+  color: #ffffff;
+  font-weight: bold;
+  width: 40%;
+}
+
+@media screen and (max-width: 480px) {
+  main #fukushinokai table tr th {
+    padding: 8px;
+  }
+}
+
+main #fukushinokai table tr td {
+  padding: 16px;
+  background: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 480px) {
+  main #fukushinokai table tr td {
+    padding: 8px;
+  }
+}
+
+main #fukushinokai table tr td .f_large {
+  font-size: 1.4em;
+}
+
+main #fukushinokai .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 17px solid transparent;
+  border-left: 17px solid transparent;
+  border-top: 17px solid #2F5A7C;
+  border-bottom: 0;
+  margin: 0 auto;
+}
+
+main #fukushinokai h3 {
+  font-size: 1.6rem;
+  margin: 60px 0 30px;
+  text-align: center;
+}
+
+main #fukushinokai ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 0 0 50px;
+}
+
+@media screen and (max-width: 1080px) {
+  main #fukushinokai ul {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #fukushinokai ul {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main #fukushinokai ul li {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #fukushinokai ul li {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main #fukushinokai ul li {
+    display: block;
+  }
+}
+
+main #fukushinokai ul li h4 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+main #fukushinokai ul li h4 .f_large {
+  font-size: 1.4em;
+}
+
+main #fukushinokai ul li h4 .f_small {
+  font-size: 0.8em;
+}
+
+main #fukushinokai ul li h4.text_short {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #fukushinokai ul li h4.text_short {
+    margin-bottom: 0;
+  }
+}
+
+main #fukushinokai ul li img {
+  display: block;
+  height: 100px;
+  margin: 0 auto;
+}
+
+main #fukushinokai .join_btn {
+  background: #33466B;
+  width: 350px;
+  max-width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 50px auto;
+  border: none;
+  border-radius: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 24px;
+      grid-template-columns: 1fr 24px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #fukushinokai .join_btn p {
+  color: #ffffff;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+main #fukushinokai .join_btn div {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 24px;
+  position: relative;
+}
+
+main #fukushinokai .join_btn div::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  border-top: 3px solid #33466B;
+  border-right: 3px solid #33466B;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+main #fukushinokai .join_btn:hover {
+  opacity: 0.9;
+}
+/*# sourceMappingURL=fukushinokai.css.map */

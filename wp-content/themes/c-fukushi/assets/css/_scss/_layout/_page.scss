@@ -1,0 +1,217 @@
+.page {
+  .page-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingBottom(80, 20);
+    @include paddingTop(60, 20);
+    @extend .page-tag;
+  }
+}
+
+.formentry-form {
+  .form-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(60, 20);
+    @include paddingBottom(80, 20);
+    .form-head {
+      .form__h {
+        @extend .heading_bar_small;
+      }
+      .form__p {
+        @include fsVw(16, 14);
+        font-weight: 500;
+        line-height: 1.7;
+        margin-top: 1.5em;
+        a {
+          text-decoration: underline;
+        }
+        @media (max-width: $md) {
+          margin-top: 1em;
+        }
+      }
+    }
+    .form-body {
+      @include marginTop(40, 20);
+      .form-wrap {
+        max-width: var(--width_form);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--color_small-gray);
+        @include paddingTop(40, 20);
+        @include paddingBottom(40, 20);
+        @include paddingLeft(110, 10);
+        @include paddingRight(110, 10);
+        .form-bar__img {
+          display: block;
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .form-counter-sticky {
+          top: 140px;
+          position: sticky;
+          width: 200px;
+          margin: 1rem 0 0 auto;
+          z-index: 1;
+          @media (max-width: $md) {
+            width: 220px;
+          }
+          .form-counter {
+            background-color: var(--color_red);
+            padding: 0.5rem 1em;
+            border-radius: 6px;
+            display: flex;
+            // flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .counter_text {
+              font-size: 14px;
+              color: var(--color_white);
+              margin-right: 0.5em;
+            }
+            .counter_num {
+              font-size: 24px;
+              color: var(--color_white);
+            }
+          }
+        }
+        #contact-form-request {
+          label:has(
+              + .wpcf7-form-control-wrap input.wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap textarea.wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap
+                select[name='your-family'].wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap
+                select[name='your-birth-year'].wpcf7-validates-as-required,
+              + .wpcf7-form-control-wrap
+                select[name='your-birth-month'].wpcf7-validates-as-required,
+              + .wpcf7-form-control-wrap
+                select[name='your-birth-day'].wpcf7-validates-as-required
+            ),
+          label:has(+ .wpcf7-form-control-wrap .wpcf7-radio) {
+            &:after {
+              content: '必須';
+              display: inline-block;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              color: var(--color_white);
+              background: var(--color_primary);
+              border-radius: 6px;
+              padding: 0 8px;
+              margin-left: 10px;
+              vertical-align: middle;
+            }
+          }
+          label:has(
+              + .wpcf7-form-control-wrap
+                input.add_data.wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap
+                textarea.add_data.wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap
+                select[name='your-family'].add_data.wpcf7-validates-as-required
+            ),
+          label:has(
+              + .wpcf7-form-control-wrap
+                select[name='your-birth-year'].add_data.wpcf7-validates-as-required
+            ):has(
+              + .wpcf7-form-control-wrap
+                + .wpcf7-form-control-wrap
+                select[name='your-birth-month'].add_data.wpcf7-validates-as-required
+            ):has(
+              + .wpcf7-form-control-wrap
+                + .wpcf7-form-control-wrap
+                + .wpcf7-form-control-wrap
+                select[name='your-birth-day'].add_data.wpcf7-validates-as-required
+            ),
+          label:has(+ .wpcf7-form-control-wrap .wpcf7-radio.add_data) {
+            &:after {
+              content: '入力済';
+              display: inline-block;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              color: var(--color_white);
+              background: var(--color_red);
+              border-radius: 6px;
+              padding: 0 8px;
+              margin-left: 10px;
+            }
+          }
+
+          input[type='text'],
+          input[type='email'],
+          input[type='tel'],
+          textarea,
+          select {
+            outline: 2px solid var(--color_mini-gray);
+          }
+          input.wpcf7-validates-as-required,
+          textarea.wpcf7-validates-as-required,
+          select.wpcf7-validates-as-required {
+            outline: none;
+            border: 2px solid var(--color_red);
+            &.add_data {
+              border: 2px solid var(--color_mini-gray);
+            }
+          }
+          .wpcf7-radio {
+            input {
+              border: 2px solid var(--color_red);
+            }
+            &.add_data {
+              input {
+                border: 2px solid var(--color_mini-gray);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 404
+.page-404 {
+  .page-404-block {
+    @include wrapWidth(var(--width_post));
+    @include paddingTop(60, 20);
+    @include paddingBottom(120, 60);
+
+    .page-404__h {
+      @extend .heading_dotted;
+      text-align: center;
+    }
+
+    .page-404__p {
+      @include marginTop(40, 20);
+      @include fsVw(18, 14);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .page-404__link {
+      @include marginTop(60, 40);
+      @extend .btn_round;
+    }
+  }
+}
+
+.page-line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 10);
+    @include paddingBottom(54, 20);
+  }
+}

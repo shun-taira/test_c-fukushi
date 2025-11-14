@@ -1,0 +1,64 @@
+.plan {
+  .plan-block {
+    @include wrapWidth(var(--width_plan));
+    @include paddingTop(60, 30);
+  }
+}
+
+.hall {
+  .hall-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 30);
+  }
+}
+
+.relation {
+  .relation-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 30);
+    @include paddingBottom(72, 30);
+  }
+}
+
+.ban {
+  .ban-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingBottom(10, 0);
+  }
+}
+
+.faq {
+  background-color: var(--color_small-gray);
+  .faq-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(66, 30);
+  }
+}
+
+.meo {
+  .meo-block {
+    @include paddingTop(90, 30);
+    .place-header {
+      @include wrapWidth(var(--width_header));
+      @include paddingBottom(20, 20);
+    }
+  }
+}
+
+.archive {
+  .archive-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 30);
+    @include paddingBottom(80, 30);
+  }
+}
+
+.line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(54, 30);
+  }
+}

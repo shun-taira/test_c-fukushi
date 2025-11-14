@@ -1,0 +1,29 @@
+.component-list {
+  background-color: var(--color_white);
+  padding-top: 4rem;
+  padding-bottom: 0;
+
+  .list__h {
+    font-family: var(--ff_noto);
+    font-size: 3.8rem;
+    font-weight: 700;
+    display: none;
+  }
+}
+
+.component-plan {
+  padding-top: 8rem;
+}
+
+.component-banner {
+  padding-top: 2.8rem;
+}
+
+.component-staff {
+  background-color: var(--color_light);
+  margin-top: 8rem;
+}
+
+.footer {
+  padding-top: 0rem;
+}

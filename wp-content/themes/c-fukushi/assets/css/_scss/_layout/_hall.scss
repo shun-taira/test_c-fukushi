@@ -1,0 +1,51 @@
+.hall-hall {
+  .hall-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 20);
+  }
+}
+
+.hall-relation {
+  .relation-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 20);
+    @include paddingBottom(72, 20);
+  }
+}
+
+.hall-plan {
+  background-color: var(--color_small-gray);
+  .plan-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(60, 20);
+    @include paddingBottom(54, 0);
+  }
+}
+
+.hall-ban-tel {
+  .tel-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(72, 20);
+    @include paddingBottom(40, 10);
+  }
+}
+
+.hall-meo {
+  .meo-block {
+    @include paddingTop(30, 20);
+    @include paddingBottom(42, 0);
+    .place-header {
+      @include wrapWidth(var(--width_header));
+      @include paddingBottom(20, 20);
+    }
+  }
+}
+
+.hall-line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 10);
+    @include paddingBottom(54, 20);
+  }
+}

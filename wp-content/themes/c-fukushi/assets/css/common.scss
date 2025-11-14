@@ -1,0 +1,213 @@
+@import url('https://use.typekit.net/afs5kol.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+@import '_scss/_utility.scss';
+// @import '_scss/_develop.scss';
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff_noto);
+  line-height: 1.45;
+  color: var(--color_dark);
+
+  // @media (max-width: $lg) {
+  //   font-size: 55%;
+  // }
+
+  @media (max-width: $md) {
+    main {
+      padding-top: 66px;
+    }
+  }
+}
+
+body.active {
+  overflow: hidden;
+}
+
+@import '_scss/_header.scss';
+@import '_scss/_footer.scss';
+@import '_scss/_components.scss';
+
+body.page-template-default,
+body.page-template-formentry,
+body.page-template-formentry-form,
+body.error404 {
+  @import '_scss/_layout/_page.scss';
+}
+
+// body.plan-template-default {
+//   @import '_scss/_layout/_plan.scss';
+// }
+
+// body.page-template-staff {
+//   @import '_scss/_layout/_staff.scss';
+// }
+
+// body.page-template-request {
+//   @import '_scss/_layout/_request.scss';
+// }
+
+body.page-template-contact {
+  @import '_scss/_layout/_contact.scss';
+}
+
+body.page-template-quick {
+  @import '_scss/_layout/_quick.scss';
+}
+
+body.page-template-faq {
+  @import '_scss/_layout/_faq.scss';
+}
+
+body.page-template-company {
+  @import '_scss/_layout/_company.scss';
+}
+
+body.page-template-membership,
+body.page-template-membership-form {
+  @import '_scss/_layout/_membership.scss';
+}
+
+body.page-template-formentry-form {
+  .formentry-form {
+    @extend .page-tag;
+  }
+}
+
+body.page-template-membership-form {
+  .membership-form {
+    @extend .page-tag;
+  }
+}
+
+body.page-template-first {
+  @import '_scss/_layout/_first.scss';
+}
+
+body.page-template-flow {
+  @import '_scss/_layout/_flow.scss';
+}
+
+// body.page-template-reasons {
+//   @import '_scss/_layout/_reasons.scss';
+// }
+
+// body.page-template-expenses {
+//   @import "_scss/_layout/_expenses.scss";
+// }
+
+// body.page-template-jizen {
+//   @import "_scss/_layout/_jizen.scss";
+// }
+
+body.page-template-plan {
+  @import '_scss/_layout/_plan.scss';
+}
+
+body.page-template-plan-item {
+  @import '_scss/_layout/_plan-item.scss';
+}
+
+// body.page-template-beginner {
+//   @import '_scss/_layout/_beginner.scss';
+// }
+
+// body.page-template-guide {
+//   @import '_scss/_layout/_guide.scss';
+// }
+
+// body.page-template-ichinoe {
+//   @import '_scss/_layout/_ichinoe.scss';
+// }
+
+// body.page-template-service {
+//   @import '_scss/_layout/_service.scss';
+// }
+
+// body.page-template-furusawa {
+//   @import "_scss/_layout/_furusawa.scss";
+// }
+
+body.page-template-public {
+  @import '_scss/_layout/_public.scss';
+}
+
+body.page-template-hall {
+  @import '_scss/_layout/_hall.scss';
+}
+
+body.page-template-hall-item,
+body.page-template-hall-item-warabi {
+  @import '_scss/_layout/_hall-item.scss';
+}
+
+body.single-relation {
+  @import '_scss/_layout/_single-relation.scss';
+}
+
+// body.page-template-ensemble {
+//   @import '_scss/_layout/_ensemble.scss';
+// }
+
+body.page-template-flower {
+  @import '_scss/_layout/_flower.scss';
+}
+
+// body.page-template-line {
+//   @import '_scss/_layout/_line.scss';
+// }
+
+// body.post-type-archive-news,
+body.archive {
+  @import '_scss/_layout/_archive.scss';
+}
+
+body.single {
+  @import '_scss/_layout/_single.scss';
+}
+
+// body.single-public {
+//   @import '_scss/_layout/_single-public.scss';
+// }
+
+// body.page-template-sitemap {
+//   @import "_scss/_layout/_sitemap.scss";
+// }
+
+// body .header .header-content-sp .header-content-sp-list {
+//   display: none;
+// }
+
+body.page-template-home {
+  @import '_scss/_layout/_home.scss';
+
+  // .header .header-content-sp .header-content-sp-list {
+  //   display: flex;
+  // }
+}
+
+//　スクロールヒント対応
+.scroll-hint-icon-wrap {
+  display: none;
+  @media (max-width: $md) {
+    display: block;
+    .scroll-hint-icon {
+      top: calc(50% - 20px);
+      left: calc(50% - 25px);
+      width: 50px;
+      height: 40px;
+      padding: 15px 10px 10px 10px;
+      &:before {
+        width: 20px;
+        height: 20px;
+      }
+      &:after {
+        top: 3px;
+        left: 55%;
+      }
+      .scroll-hint-text {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+$cf_blue: #2F5A7C;
+$cf_navy: #33466B;
+$cf_red: #9B0E0E;
+$cf_gray: #666666;
+$cf_light_gray: #F2F4F4;
+$cf_black: #333333;
+$cf_gold: #A08332;
+
+
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+// ブレイクポイントを指定
+$pc: 1080px;
+$tab: 768px;
+$sp: 480px;
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+main {
+  margin-top: 100px;
+  @include pc {
+    margin-top: 44px;
+  }
+  #chuofukushikaikan {
+    padding: 70px 0 150px;
+    h2 {
+      padding-bottom: 50px;
+    }
+    img {
+      width: 100%;
+    }
+    .images {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      @include tab {
+        margin-top: 1rem;
+        gap: 0.5rem;
+      }
+      @include sp {
+        grid-template-columns: 1fr 1fr;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    table {
+      margin: 100px 0 0;
+      width: 100%;
+      tr {
+        &:last-of-type {
+          td {
+            border-bottom: 1px solid #828383;
+          }
+        }
+        th {
+          width: 100px;
+          padding: 16px;
+          background: #828383;
+          color: #ffffff;
+          font-weight: bold;
+          @include sp {
+            padding: 8px;
+          }
+        }
+        td {
+          padding: 2rem;
+          background: #ffffff;
+          border-top: 1px solid #828383;
+          @include sp {
+            padding: 8px;
+          }
+          iframe {
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+  #halls {
+    background: $cf_light_gray;
+    padding: 100px 0 100px;
+    .halls_list {
+      padding: 60px 0 0;
+      h3 {
+        padding: 8px;
+        background: $cf_blue;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        @include sp {
+          padding: 4px;
+        }
+      }
+      ul {
+        background: #ffffff;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include sp {
+          grid-template-columns: 1fr;
+        }
+        li {
+          padding: 0.5rem 2rem;
+          border-bottom: 1px solid #cccccc;
+          &:nth-of-type(odd) {
+            border-right: 1px solid #cccccc;
+            @include sp {
+              border-right: none;
+            }
+          }
+          @include tab {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      padding-top: 2rem;
+      @include tab {
+        text-align: left;
+      }
+    }
+  }
+}

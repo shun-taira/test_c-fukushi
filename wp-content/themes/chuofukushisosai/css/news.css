@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* フォント読込 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  main {
+    margin-top: 44px;
+  }
+}
+
+main #news {
+  padding: 70px 0 100px;
+  background: #F2F4F4;
+}
+
+main #news ol li {
+  padding-bottom: 50px;
+  border-bottom: 1px dotted #333333;
+  margin-bottom: 50px;
+}
+
+main #news ol li .news_info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #news ol li .news_info .category {
+  background: #33466B;
+  color: #ffffff;
+  text-align: center;
+  width: 90px;
+  padding: 3px;
+  border-radius: 3px;
+  line-height: 1.1;
+}
+
+main #news ol li h2 {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 20px 0 30px;
+}
+
+@media screen and (max-width: 480px) {
+  main #news ol li h2 {
+    font-size: 1.1rem;
+  }
+}
+
+main #news ol li img {
+  margin-top: 2rem;
+  width: 300px;
+  cursor: pointer;
+}
+
+main #news ol li img:hover {
+  opacity: 0.9;
+}
+/*# sourceMappingURL=news.css.map */

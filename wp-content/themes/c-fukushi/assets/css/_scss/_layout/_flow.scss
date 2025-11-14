@@ -1,0 +1,35 @@
+.flow-flow {
+  .flow-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingBottom(80, 30);
+    @include paddingTop(60, 20);
+    .flow-title-head {
+      .flow-title__h {
+        @extend .heading_dotted;
+        text-align: center;
+        color: var(--color_dark-blue);
+      }
+    }
+    .flow-title__p {
+      @include fsVw(16, 14);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-top: 3em;
+      margin-bottom: 3.5em;
+    }
+    .flow__h {
+      @extend .heading_bar_small;
+      justify-content: flex-start;
+      text-align: center;
+    }
+  }
+}
+
+.flow-line {
+  background-color: var(--color_small-gray);
+  .line-block {
+    @include wrapWidth(var(--width_header));
+    @include paddingTop(54, 30);
+    @include paddingBottom(54, 30);
+  }
+}
