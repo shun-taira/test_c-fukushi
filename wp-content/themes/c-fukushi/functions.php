@@ -1155,3 +1155,372 @@ echo $json;
   }
 });
 ?>
+<?php
+// schema_kasou
+function custom_schema_kasou_detail() {
+    if ( is_page('kasou') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://staging.c-fukushi.co.jp/plan/kasou/#service",
+                "serviceType": "火葬式プラン",
+                "name": "中央福祉葬祭の火葬式プラン",
+                "description": "通夜式や葬儀・告別式はおこなわず、ホールでゆっくりお別れをして見送るプランです。「費用を抑えてお見送りしたい方」「ご家族とゆっくりお別れの時間を過ごしたい方」といった方に選ばれています。",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "川口市" },
+                    { "@type": "City", "name": "蕨市" },
+                    { "@type": "State", "name": "埼玉県" }
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "火葬式プランの価格情報",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "火葬式プラン",
+                            "priceCurrency": "JPY",
+                            "price": "154000",
+                            "url": "http://testcfukushi.local/plan/kasou/",
+                            "availability": "https://schema.org/InStock"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://staging.c-fukushi.co.jp/plan/kasou/#howto",
+                "name": "火葬式プランの流れ（手順）",
+                "description": "火葬式プランにおけるご逝去から火葬・収骨までの基本的な流れです。",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "ご逝去・搬送",
+                        "text": "病院等でご逝去後、中央福祉葬祭へ連絡し、寝台車でご遺体を安置場所へ搬送します。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "ご安置・打合せ",
+                        "text": "ご遺体を安置し、葬儀の打合せにて、火葬の日程や手続き、プラン内容の詳細を決定します。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "納棺・出棺",
+                        "text": "納棺後、火葬場へ出棺します。通夜・告別式は行いません。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "火葬・収骨",
+                        "text": "火葬場で火葬を行い、お骨上げ（収骨）を行います。"
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://staging.c-fukushi.co.jp/plan/kasou/#plan_item_list",
+                "name": "火葬式プランに含まれる内容",
+                "description": "火葬式プラン（税別154,000円）に含まれる物品・サービスの一覧です。",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご搬送(10km)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご安置（2日分）"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "name": "保冷剤（2日分）"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Service",
+                            "name": "枕飾り"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Service",
+                            "name": "事務手続き代行"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Service",
+                            "name": "御棺(桐六分)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "Service",
+                            "name": "シーツ"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "Service",
+                            "name": "運営管理費"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 9,
+                        "item": {
+                            "@type": "Service",
+                            "name": "御遺影写真(カラー)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 10,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご搬送(火葬場まで)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 11,
+                        "item": {
+                            "@type": "Service",
+                            "name": "骨壺"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 12,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご自宅飾り"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 13,
+                        "item": {
+                            "@type": "Service",
+                            "name": "花束"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_kasou_detail');
+?>
+<?php
+// schema_ichinichi
+function custom_schema_ichinichi_detail() {
+    if ( is_page('ichinichi') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://staging.c-fukushi.co.jp/plan/ichinichi/#service",
+                "serviceType": "一日葬プラン",
+                "name": "中央福祉葬祭のシンプル一日プラン",
+                "description": "通夜式をおこなわず、葬儀・告別式から火葬までを1日で執り行うプランです。「体力的なご都合でお時間が取れない方」「遠方の参列者への負担を軽減されたい方」といった方に選ばれています。",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "川口市" },
+                    { "@type": "City", "name": "蕨市" },
+                    { "@type": "State", "name": "埼玉県" }
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "シンプル一日プランの価格情報",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "シンプル一日プラン",
+                            "priceCurrency": "JPY",
+                            "price": "198000",
+                            "url": "http://testcfukushi.local/plan/ichinichi/",
+                            "availability": "https://schema.org/InStock"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://staging.c-fukushi.co.jp/plan/ichinichi/#howto",
+                "name": "一日葬プランの流れ（手順）",
+                "description": "一日葬プランにおけるご逝去から葬儀・火葬までの基本的な流れです。",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "ご逝去・搬送・打合せ（1日目）",
+                        "text": "病院等でご逝去後、中央福祉葬祭へ連絡し、ご遺体を安置場所へ搬送します。ご安置後、日程やプラン内容の詳細を決定します。通夜は行いません。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "納棺・告別式・火葬（2日目）",
+                        "text": "納棺後、告別式・葬儀を執り行います。その後、火葬場へ出棺し、火葬・収骨を行います。"
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://staging.c-fukushi.co.jp/plan/ichinichi/#plan_item_list",
+                "name": "シンプル一日プランに含まれる内容",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご搬送(10km)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご安置（2日分）"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "name": "保冷剤（2日分）"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Service",
+                            "name": "枕飾り"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Service",
+                            "name": "事務手続き代行"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Service",
+                            "name": "御棺(桐六分)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "Service",
+                            "name": "シーツ"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "Service",
+                            "name": "運営管理費"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 9,
+                        "item": {
+                            "@type": "Service",
+                            "name": "御遺影写真(カラー)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 10,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご搬送(火葬場まで)"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 11,
+                        "item": {
+                            "@type": "Service",
+                            "name": "骨壺"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 12,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご自宅飾り"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 13,
+                        "item": {
+                            "@type": "Service",
+                            "name": "花束"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_ichinichi_detail');
+?>
