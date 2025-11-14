@@ -43,7 +43,13 @@ $plan_encourage = get_field('plan_encourage');
 <section>
   <div class="plan">
     <div class="plan-block">
-      <div class="plan-info <?php echo $this_color_set; ?> <?php echo $plan_encourage[0]; ?>">
+      <div class="plan-info <?php echo $this_color_set; ?> <?php
+// $plan_encourage が配列であり、かつ要素を持っているかを確認する
+if ( ! empty( $plan_encourage ) && is_array( $plan_encourage ) ) {
+    // データがある場合のみ $plan_encourage[0] を安全に出力する
+    echo $plan_encourage[0];
+}
+?>">
         <div class="plan-info-left">
           <div class="plan-info-text-wrap">
             <div class="plan-info-text">
