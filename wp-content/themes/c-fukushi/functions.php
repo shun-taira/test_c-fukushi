@@ -456,7 +456,7 @@ add_image_size('top-slider_sp', 563, 849, true);
 <?php
 //Schema_共通部分
 add_action('wp_head', function() {
-  if (is_page(array('first', 'plan', 'chokuso','ichinichi', '', 'ichinichi-hana','futsuka','warabi'))) {
+  if (is_page(array('first', 'plan', 'chokuso','ichinichi', '', 'ichinichi-hana','futsuka','warabi','chuou-fukushi'))) {
     ?>
     <script type="application/ld+json">
     <?php
@@ -2381,4 +2381,61 @@ JSON;
     }
 }
 add_action('wp_head', 'custom_schema_warabi_detail');
+?>
+<?php
+// schema_chuou-fukushi
+function custom_schema_chuou_fukushi_detail() {
+    if ( is_page('chuou-fukushi') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "http://testcfukushi.local/hall/chuou-fukushi/#localbusiness",
+                "name": "中央福祉会館",
+                "description": "中央福祉葬祭ホールは、埼玉高速鉄道線「新井宿駅」よりタクシーで約5分と利便性に優れた葬儀場です。家族葬はもちろん、直葬・一日葬にも対応可能です。お別れまでの時間を家族だけでゆっくりとお過ごしいただけます。",
+                "url": "http://testcfukushi.local/hall/chuou-fukushi/",
+                "image": "http://testcfukushi.local/wp-content/uploads/2025/04/中央福祉葬祭外観修正済み_トリミング_2-1-scaled.jpg",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "西新井宿603-3",
+                    "addressLocality": "川口市",
+                    "addressRegion": "埼玉県",
+                    "postalCode": "333-0833",
+                    "addressCountry": "JP"
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+"Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday"
+                        ],
+                        "opens": "00:00",
+                        "closes": "23:59"
+                    }
+                ],
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "telephone": "0120-594-294"
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_chuou_fukushi_detail');
 ?>
