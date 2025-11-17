@@ -2439,3 +2439,249 @@ JSON;
 }
 add_action('wp_head', 'custom_schema_chuou_fukushi_detail');
 ?>
+<?php
+// shema_membership
+function custom_schema_membership_detail() {
+    if ( is_page('membership') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Offer",
+                "@id": "http://testcfukushi.local/membership/#offer",
+                "name": "福祉の会 会員入会",
+                "description": "入会金1,000円のみで同居のご家族様全員がご利用いただけます。積立金・年会費不要です。",
+                "price": "1000",
+                "priceCurrency": "JPY",
+                "url": "http://testcfukushi.local/membership/",
+                "availability": "https://schema.org/InStock",
+                "itemOffered": {
+                    "@type": "ProgramMembership",
+                    "@id": "http://testcfukushi.local/membership/#program",
+                    "name": "福祉の会",
+                    "programName": "福祉の会",
+                    "description": "もしもの時に安心してご利用いただけるよう、お得な会員制度「福祉の会」をご用意しております。積立金・年会費不要で、提携加盟店での特典も受けられます。",
+                    "hostingOrganization": {
+                        "@type": "Organization",
+                        "name": "中央福祉葬祭",
+                        "url": "https://staging.c-fukushi.co.jp/"
+                    }
+                }
+            },
+            {
+                "@type": "ItemList",
+                "@id": "http://testcfukushi.local/membership/#benefits",
+                "name": "福祉の会 会員特典",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Service",
+                            "name": "ご葬儀費用各種プラン割引55,000円〜"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Service",
+                            "name": "式場利用料55,000円割引"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "name": "仏壇・仏具会員割引10%〜"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Service",
+                            "name": "会員のご家族の方ならどなたでも利用可能"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Service",
+                            "name": "会員ならではのご葬儀後のアフターケアが充実"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Service",
+                            "name": "永久会員としてご利用いただけます"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_membership_detail');
+?>
+<?php
+// schema_urgency
+function custom_schema_urgency_detail() {
+    if ( is_page('urgency') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "http://testcfukushi.local/urgency/#service",
+                "serviceType": "ご危篤・ご逝去 緊急対応サービス",
+                "name": "中央福祉葬祭 緊急お迎えサービス",
+                "description": "《ご危篤・ご逝去でお急ぎの方へ》深夜・早朝でも遠慮なくお電話ください。現在の状況をお伝えいただくだけで、経験豊富な担当者が適切に対応し、最短30分ほどで病院・ご自宅までお迎えにあがります。",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "川口市" },
+                    { "@type": "City", "name": "蕨市" },
+                    { "@type": "State", "name": "埼玉県" }
+                ],
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "servicePhone": {
+                        "@type": "ContactPoint",
+                        "telephone": "0120-594-294",
+                        "contactType": "customer service",
+                        "areaServed": "JP",
+                        "availableLanguage": "Japanese",
+                        "hoursAvailable": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                                "Sunday"
+                            ],
+                            "opens": "00:00",
+                            "closes": "23:59"
+                        }
+                    }
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "http://testcfukushi.local/urgency/#howto",
+                "name": "ご逝去からのご依頼の流れ",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "1. まずお電話",
+                        "text": "0120-594-294 へご連絡ください。深夜・早朝でも遠慮なくお電話ください。お迎え場所、お迎え時間などをお伺いします。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "2. 迅速にお迎えにあがります",
+                        "text": "寝台車でご指定の場所（ご自宅、斎場など）へ搬送いたします。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "3. ご安置・お打ち合わせ",
+                        "text": "ご遺体をご安置した後、日程や葬儀プランについてのお打ち合わせを行います。"
+                    }
+                ]
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_urgency_detail');
+?>
+<?php
+// schema_contact
+function custom_schema_contact_detail() {
+    if ( is_page('contact') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "http://testcfukushi.local/contact/#service",
+                "serviceType": "LINE簡単相談",
+                "name": "中央福祉葬祭 LINE簡単相談",
+                "description": "葬儀に関するお問い合わせをもっと気軽にしていただきたく、LINE公式アカウントを開設いたしました。友だち登録するだけで、トークから葬儀に関するご相談やご質問が気軽に送信いただけます。",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "川口市" },
+                    { "@type": "City", "name": "蕨市" },
+                    { "@type": "State", "name": "埼玉県" }
+                ],
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "http://testcfukushi.local/contact/",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "customer service",
+                        "url": "https://lin.ee/6m53CrY",
+                        "availableLanguage": "Japanese"
+                    }
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "http://testcfukushi.local/contact/#howto",
+                "name": "LINE 友達追加の手順",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "1. 友だち追加",
+                        "text": "「友だち追加はこちらから」ボタンをタップ、またはQRコードを読み取ってください。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "2. アカウントを「追加」",
+                        "text": "LINEアプリが起動し、中央福祉葬祭のアカウントが表示されます。アカウントを「追加」してください。"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "3. ご相談",
+                        "text": "トーク画面が開いたら、ご相談内容をそのままご入力・送信ください。"
+                    }
+                ]
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script typeD="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_contact_detail');
+?>
