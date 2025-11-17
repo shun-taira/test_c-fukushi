@@ -2685,3 +2685,99 @@ JSON;
 }
 add_action('wp_head', 'custom_schema_contact_detail');
 ?>
+<?php
+// schema_flower
+function custom_schema_flower_detail() {
+    if ( is_page('flower') ) {
+        $schema_json = <<<JSON
+[
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "http://testcfukushi.local/flower/#service",
+                "serviceType": "供花・供物 ご注文サービス",
+                "name": "中央福祉葬祭 供花・供物 ご注文",
+                "description": "故人様を偲び、感謝の気持ちを伝える供花は、ご遺族様の慰めにもなることでしょう。中央福祉葬祭では供花・供物のご注文（FAX/Web）を承っております。",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "中央福祉葬祭",
+                    "url": "https://staging.c-fukushi.co.jp/"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "川口市" },
+                    { "@type": "City", "name": "蕨市" },
+                    { "@type": "State", "name": "埼玉県" }
+                ],
+                "hasOfferCatalog": {
+                     "@type": "OfferCatalog",
+                     "name": "生花・洋花・施主花・供物 商品一覧",
+                     "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "生花1基"
+                            },
+                            "price": "19800~66000",
+                            "priceCurrency": "JPY"
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "洋花1基"
+                            },
+                            "price": "22000~66000",
+                            "priceCurrency": "JPY"
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "施主花1基"
+                            },
+                            "price": "88000~132000",
+                            "priceCurrency": "JPY"
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "茶壺"
+                            },
+                            "price": "11000",
+                            "priceCurrency": "JPY"
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "果物盛"
+                            },
+                            "price": "22000",
+                            "priceCurrency": "JPY"
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Product",
+                                "name": "缶詰盛"
+                            },
+                            "price": "22000",
+                            "priceCurrency": "JPY"
+                        }
+                     ]
+                }
+            }
+        ]
+    }
+]
+JSON;
+
+        echo '<script type="application/ld+json">' . $schema_json . '</script>';
+    }
+}
+add_action('wp_head', 'custom_schema_flower_detail');
+?>
